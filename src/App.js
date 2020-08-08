@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useRef } from 'react';
+import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
+import routes from "./routes";
 import './App.css';
+import ScrollReveal from './utils/ScrollReveal';
+
+import Header from './components/Header';
 
 function App() {
+
+  const childRef = useRef();
+  let location = useLocation();
+
+  useEffect(() => {
+    document.body.classList.add('is-loaded')
+    childRef.current.init();
+    
+  }, [location]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      
+      <ScrollReveal
+      ref={childRef}
+      children={() => (
+        <Switch>
+          {routes.map((route, key) => <Route key={key}  exact path={route.path} component={route.component} />)}
+        </Switch>
+      )} />
+    </Router>
   );
 }
 
