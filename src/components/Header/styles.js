@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    background-color: red;
-    padding: 20px;
-    width: 100vw;
-    
-    h1{
-        /* color: white */
-    }
+    height: 60px;
+    background-color: ${props => props.theme.colors.primary};
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
 `;
