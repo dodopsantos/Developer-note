@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, styled } from 'styled-components';
+import img from '../assets/images/illustration-section-01.png';
 
 export default createGlobalStyle`
   * {
@@ -8,10 +9,13 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
+  body {    
     background-color: ${props => props.theme.colors.background};
     font-size: 14px;
     color: ${props => props.theme.colors.text};
-    font-family: sans-serif
-  }
+    font-family: sans-serif;
+    background-image: url(${img});
+    background-repeat: no-repeat;
+    background-position: center top;
+  }  
 `;

@@ -11,6 +11,7 @@ import light from './Styles/themes/light';
 import dark from './Styles/themes/dark';
 
 import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 
 function App() {
   const [theme, setTheme] = usePersistedState('theme', light);
@@ -31,6 +32,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Header toggletheme={toggletheme}/>
+        <div style={{display: "flex"}}>
+        
+        <Sidebar />
         
         <ScrollReveal
         ref={childRef}
@@ -39,6 +43,7 @@ function App() {
             {routes.map((route, key) => <Route key={key}  exact path={route.path} component={route.component} />)}
           </Switch>
         )} />
+        </div>
       </ThemeProvider>
     </Router>
   );
