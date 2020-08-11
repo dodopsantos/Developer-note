@@ -1,4 +1,4 @@
-import { createGlobalStyle, styled } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import img from '../assets/images/illustration-section-01.png';
 
 export default createGlobalStyle`
@@ -17,5 +17,10 @@ export default createGlobalStyle`
     background-image: url(${img});
     background-repeat: no-repeat;
     background-position: center top;
-  }  
+    height: 100vh;
+  }
+
+  #root {
+    height: 100%;
+  }
 `;

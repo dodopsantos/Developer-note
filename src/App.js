@@ -32,9 +32,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Header toggletheme={toggletheme}/>
-        <div style={{display: "flex"}}>
-        
-        <Sidebar />
+        <div style={{display: "flex", height: "92%"}}>
+  
+        <Sidebar />      
         
         <ScrollReveal
         ref={childRef}

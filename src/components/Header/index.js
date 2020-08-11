@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import Switch from 'react-switch';
+import { Link } from 'react-router-dom';
 import { ThemeContext } from 'styled-components';
 import { shade } from 'polished';
+import logo from '../../assets/images/Screenshot_2.png';
 
 import {
-    Container
+    Container,
+    Title
 } from './styles';
 
 function Header({ toggletheme }){
@@ -12,8 +15,9 @@ function Header({ toggletheme }){
     const { colors, title } = useContext(ThemeContext);
    
     return(
-        <Container>            
-            <h1>Hello World</h1>
+        <Container>
+            <Link><img src={logo} width={96} height={60}></img></Link>
+            <Title>Developer Note</Title>
             <Switch 
                 onChange={toggletheme}
                 checked={title === 'dark'}
