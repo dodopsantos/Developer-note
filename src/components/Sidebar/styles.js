@@ -17,7 +17,7 @@ export const Container = styled.div`
     @media(max-width: 768px){
         .pro-sidebar{
             height: 92%;
-        }        
+        }
     }
 `;
 

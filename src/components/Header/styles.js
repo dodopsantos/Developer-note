@@ -12,4 +12,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
 	
+    @media(max-width: 768px){
+        font-size: 15px;
+    }
 `;

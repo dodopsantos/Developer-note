@@ -16,7 +16,7 @@ function Header({ toggletheme }){
    
     return(
         <Container>
-            <Link><img src={logo} width={96} height={60}></img></Link>
+            <Link to="/"><img src={logo} width={96} height={60}></img></Link>
             <Title>Developer Note</Title>
             <Switch 
                 onChange={toggletheme}
